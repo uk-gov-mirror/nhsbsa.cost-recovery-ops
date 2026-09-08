@@ -52,11 +52,11 @@
               data['cancelled-by'] != 'UK' or
               data['entitlement-end-date-day'] != '16' or
               data['entitlement-end-date-month'] != '10' or
-              data['entitlement-end-date-year'] != '2024' or
+              data['entitlement-end-date-year'] != '2025' or
               data['cancellation-reason'] != 'The entitlement holder has died' or
-              data['date-entitlement-holder-died-day'] != '15' or
+              data['date-entitlement-holder-died-day'] != '16' or
               data['date-entitlement-holder-died-month'] != '10' or
-              data['date-entitlement-holder-died-year'] != '2024'
+              data['date-entitlement-holder-died-year'] != '2025'
           ) %}
           <div class="nhsuk-notification-banner nhsuk-notification-banner--success" role="alert" aria-labelledby="nhsuk-notification-banner-title" data-module="nhsuk-notification-banner">
             <div class="nhsuk-notification-banner__header">
@@ -165,9 +165,9 @@
               <li class="nhsuk-tabs__list-item">
                 <a class="nhsuk-tabs__tab" href="#dependants">Dependants</a>
               </li>
-              <!--li class="nhsuk-tabs__list-item">
+              <li class="nhsuk-tabs__list-item">
                 <a class="nhsuk-tabs__tab" href="#cancellation-details">Cancellation details</a>
-              </li-->
+              </li>
             </ul>
 
 
@@ -329,8 +329,8 @@
                         Entitlement status
                       </dt>
                       <dd class="nhsuk-summary-list__value">
-                        <strong class="nhsuk-tag nhsuk-tag--green">
-                          Registered
+                        <strong class="nhsuk-tag nhsuk-tag--red">
+                          Cancelled
                         </strong>
                       </dd>
                       <dd class="nhsuk-summary-list__actions">
@@ -415,7 +415,7 @@
                               {# Display the date in the format "day month year" #}
                               {{ day | int }} {{ month_name }} {{ year }}
                             {% else %}
-                              06 January 2025
+                              18 August 2025
                             {% endif %}
                         {% else %}
                           {% if data['s1-entitlement-issue-date-day'] and data['s1-entitlement-issue-date-month'] and data['s1-entitlement-issue-date-year'] %}
@@ -435,7 +435,7 @@
                             {# Display the date in the format "day month year" #}
                             {{ day | int }} {{ month_name }} {{ year }}
                           {% else %}
-                           06 January 2026
+                           18 August 2025
                           {% endif %}
                         {% endif %}
                       </dd>
@@ -484,7 +484,7 @@
                             {{ day | int }} {{ month_name }} {{ year }}
                     
                           {% else %}
-                            21 December 2024
+                            1 September 2025
                           {% endif %}
                         {% else %}
                           {% if data['residency-day'] and data['residency-month'] and data['residency-year'] %}
@@ -504,7 +504,7 @@
                             {# Display the date in the format "day month year" #}
                             {{ day | int }} {{ month_name }} {{ year }}
                           {% else %}
-                            21 December 2024
+                            1 September 2025
                           {% endif %}
                         {% endif %}
                       </dd>
@@ -539,7 +539,7 @@
                           {# Display the date in the format "day month year" #}
                           {{ day | int }} {{ month_name }} {{ year }}
                         {% else %}
-                          06 January 2025
+                          5 September 2025
                       {% endif %}
                         {% else %}
                           {% if data['s1-entitlement-start-date-day'] and data['s1-entitlement-start-date-month'] and data['s1-entitlement-start-date-year'] %}
@@ -559,7 +559,7 @@
                             {# Display the date in the format "day month year" #}
                             {{ day | int }} {{ month_name }} {{ year }}
                           {% else %}
-                            06 January 2025
+                            5 September 2025
                           {% endif %}
                         {% endif %}
                       </dd>
@@ -594,7 +594,7 @@
                             {{ day | int }} {{ month_name }} {{ year }}
                           {% else %}
                             {# Display fallback date if no update date is entered #}
-                            3 January 2025
+                            16 October 2025
                           {% endif %}
 
                         {% elif data['cancel-s1-entitlement'] == 'yes' %}
@@ -617,7 +617,7 @@
                             {{ day | int }} {{ month_name }} {{ year }}
                           {% else %}
                             {# Display fallback date if no cancellation date is entered #}
-                            13 January 2025
+                            16 October 2025
                           {% endif %}
                         
                         {% else %}
@@ -639,7 +639,7 @@
                             {# Display the entitlement end date in the format "day month year" #}
                             {{ day | int }} {{ month_name }} {{ year }}
                           {% else %}
-                            <span class="nhsuk-u-visually-hidden">Not provided</span>
+                            16 October 2025
                           {% endif %}
                         {% endif %}
                       </dd>
@@ -861,10 +861,10 @@
               <!-- Dependants tab content ends -->
 
 
-            <!--div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="cancellation-details"-->
+            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="cancellation-details">
               <!-- Cancellation details tab content starts -->
 
-                <!--dl class="nhsuk-summary-list" style="margin-bottom: 20px;">
+                <dl class="nhsuk-summary-list" style="margin-bottom: 20px;">
                   <div class="nhsuk-summary-list__row">
                     <dt class="nhsuk-summary-list__key">Cancelled by</dt>
                     <dd class="nhsuk-summary-list__value">
@@ -875,8 +875,8 @@
                       {% endif %}
                     </dd>
                     <dd class="nhsuk-summary-list__actions">
-                      <-- Add any actions here if needed for interaction -->
-                    <!--/dd>
+                      <!-- Add any actions here if needed for interaction -->
+                    </dd>
                   </div>
 
                   <div class="nhsuk-summary-list__row">
@@ -905,7 +905,7 @@
                       
                     {% else %}
                       {# Default fallback date if no valid date is provided #}
-                        17 October 2024
+                        16 October 2025
                     {% endif %}
                   {% else %}
                         {% if data['entitlement-end-date-day'] and data['entitlement-end-date-month'] and data['entitlement-end-date-year'] %}
@@ -925,7 +925,7 @@
                               {# Display the date in the format "day month year" #}
                               {{ day | int }} {{ month_name }} {{ year }}
                           {% else %}
-                            16 October 2024
+                            16 October 2025
                           {% endif %}
                     {% endif %}    
                     </dd>
@@ -947,8 +947,8 @@
                 </dd>
 
                 <dd class="nhsuk-summary-list__actions">
-                  <-- Add any actions here if needed for interaction -->
-                <!--/dd>
+                  <!-- Add any actions here if needed for interaction -->
+                </dd>
               </div>
 
               {% if data['cancellation-reason'] == 'The entitlement holder is no longer insured by the Member State' %}
@@ -972,7 +972,7 @@
                       {# Display the date in the format "day month year" #}
                       {{ day | int }} {{ month_name }} {{ year }}
                   {% else %}
-                      14 January 2025
+                      16 October 2025
                   {% endif %}
                 </dd>
 
@@ -1166,7 +1166,7 @@
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">Date the entitlement holder died</dt>
                 <dd class="nhsuk-summary-list__value">
-                  15 October 2024
+                  16 October 2025
                 </dd>
 
                 <dd class="nhsuk-summary-list__actions">
@@ -1192,7 +1192,7 @@
 
             </dl>
 
-              <p style="text-align: right;"><a href="../cancellations/cancellation-details?edit-cancellation-details=Yes&s1-entitlement-end-date-day=16&s1-entitlement-end-date-month=10&s1-entitlement-end-date-year=2024">Change cancellation details</a></p>
+              <p style="text-align: right;"><a href="../cancellations/cancellation-details?edit-cancellation-details=Yes&s1-entitlement-end-date-day=16&s1-entitlement-end-date-month=10&s1-entitlement-end-date-year=2025">Change cancellation details</a></p>
             
             </div>
             <!-- Cancellation details tab content ends -->

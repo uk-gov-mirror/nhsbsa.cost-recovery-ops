@@ -81,7 +81,37 @@
 
                     <h2 class="nhsuk-card__heading nhsuk-heading-m" id="entitlement-history-100001">
                       Entitlement ID: 100001<br>
-                      06/01/2026
+                      05/09/2025 to 
+                      
+                      {% if data['update-s1-entitlement-end-date'] == 'yes' %}
+                        {% set day = data['updated-s1-entitlement-end-date-day'] | int %}
+                        {% set month = data['updated-s1-entitlement-end-date-month'] | int %}
+                        {% set year = data['updated-s1-entitlement-end-date-year'] %}
+        
+                      {% elif data['entitlement-end-date-day'] and data['entitlement-end-date-month'] and data['entitlement-end-date-year'] %}
+                            {% set day = data['entitlement-end-date-day'] | int %}
+                            {% set month = data['entitlement-end-date-month'] | int %}
+                            {% set year = data['entitlement-end-date-year'] %}
+            
+                      {% else %}
+                        {% set day = 16 %}
+                        {% set month = 10 %}
+                        {% set year = 2025 %}
+                      {% endif %}
+          
+                      {% if day < 10 %}
+                          {% set formatted_day = "0" + day | string %}
+                      {% else %}
+                          {% set formatted_day = day | string %}
+                      {% endif %}
+          
+                      {% if month < 10 %}
+                          {% set formatted_month = "0" + month | string %}
+                      {% else %}
+                          {% set formatted_month = month | string %}
+                      {% endif %}
+      
+                      {{ formatted_day }}/{{ formatted_month }}/{{ year }}
                     </h2>
 
                     <hr style="margin-top: 30px;">
@@ -139,11 +169,14 @@
                           </td>
                         </tr>
                         {% endif %}
-                        {% if data ['edit-cancellation-details'] == 'Yes' and data['entitlement-end-date-day'] != '16' and data['entitlement-end-date-month'] != '10' and data['entitlement-end-date-year'] != '2024' %}
+
                         <tr class="nhsuk-table__row">
                           <td class="nhsuk-table__cell">
                             <span class="nhsuk-table-responsive__heading">Date and time</span>
-                            <p id="currentDateS1EntitlementEndDateAmended"></span></p>
+                            <p>
+                              13/11/2025,<br>
+                              11:39
+                            </p>
                           </td>
                           <td class="nhsuk-table__cell">
                             <span class="nhsuk-table-responsive__heading">Action</span>
@@ -173,7 +206,7 @@
                                     {{ day }}/{{ month }}/{{ year }}
                                 {% else %}
                                   {# Display fallback date if no entitlement end date is entered #}
-                                    13/01/2025
+                                    16/10/2026
                                 {% endif %}
                             </p>
                           </td>
@@ -186,7 +219,6 @@
                             <p id="entitlement-history-s1-s072-entitlements-updated-by">joe.bloggs@nhsbsa.nhs.uk</p>
                           </td>
                         </tr>
-                        {% endif %}
 
 
                         <!-- Start of events for changes to the institution details -->
@@ -594,7 +626,7 @@
                         <tr class="nhsuk-table__row">
                           <td class="nhsuk-table__cell">
                             <span class="nhsuk-table-responsive__heading">Date and time</span>
-                            <p>03/02/2025, <br> 13:35</p>
+                            <p>03/08/2025, <br> 11:35</p>
                           </td>
                           <td class="nhsuk-table__cell">
                             <span class="nhsuk-table-responsive__heading">Action</span>
@@ -625,7 +657,7 @@
                         <tr class="nhsuk-table__row">
                           <td class="nhsuk-table__cell">
                             <span class="nhsuk-table-responsive__heading">Date and time</span>
-                            <p>06/01/2025, <br> 10:09</p>
+                            <p>03/08/2025, <br> 10:09</p>
                           </td>
                           <td class="nhsuk-table__cell">
                             <span class="nhsuk-table-responsive__heading">Action</span>
@@ -654,7 +686,7 @@
                         <tr class="nhsuk-table__row">
                           <td class="nhsuk-table__cell">
                             <span class="nhsuk-table-responsive__heading">Date and time</span>
-                            <p>06/01/2025, <br> 10:09</p>
+                            <p>03/08/2025, <br> 10:09</p>
                           </td>
                           <td class="nhsuk-table__cell">
                             <span class="nhsuk-table-responsive__heading">Action</span>
@@ -683,7 +715,7 @@
                         <tr class="nhsuk-table__row">
                           <td class="nhsuk-table__cell">
                             <span class="nhsuk-table-responsive__heading">Date and time</span>
-                            <p>06/01/2025, <br> 10:09</p>
+                            <p>03/08/2025, <br> 10:09</p>
                           </td>
                           <td class="nhsuk-table__cell">
                             <span class="nhsuk-table-responsive__heading">Action</span>
@@ -712,7 +744,7 @@
                         <tr class="nhsuk-table__row">
                           <td class="nhsuk-table__cell">
                             <span class="nhsuk-table-responsive__heading">Date and time</span>
-                            <p>06/01/2025, <br> 10:09</p>
+                            <p>03/08/2025, <br> 10:09</p>
                           </td>
                           <td class="nhsuk-table__cell">
                             <span class="nhsuk-table-responsive__heading">Action</span>

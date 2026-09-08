@@ -369,7 +369,7 @@
                               {# Display the date in the format "day month year" #}
                               {{ day | int }} {{ month_name }} {{ year }}
                             {% else %}
-                              30 September 2024
+                              18 August 2025
                             {% endif %}
                         {% else %}
                           {% if data['dr-s1-entitlement-issue-date-day'] and data['dr-s1-entitlement-issue-date-month'] and data['dr-s1-entitlement-issue-date-year'] %}
@@ -389,7 +389,7 @@
                             {# Display the date in the format "day month year" #}
                             {{ day | int }} {{ month_name }} {{ year }}
                           {% else %}
-                            30 September 2024
+                            18 August 2025
                           {% endif %}
                         {% endif %}
                       </dd>
@@ -440,10 +440,10 @@
                             {{ day | int }} {{ month_name }} {{ year }}
                     
                           {% else %}
-                            21 August 2024
+                            1 October 2025
                           {% endif %}
                         {% else %}
-                          Not provided
+                          1 October 2025
                         {% endif %}
                       </dd>
                       <dd class="nhsuk-summary-list__actions">
@@ -477,7 +477,7 @@
                           {# Display the date in the format "day month year" #}
                           {{ day | int }} {{ month_name }} {{ year }}
                         {% else %}
-                          5 October 2024
+                          5 October 2025
                       {% endif %}
                         {% else %}
                           {% if data['dr-s1-entitlement-start-date-day'] and data['dr-s1-entitlement-start-date-month'] and data['dr-s1-entitlement-start-date-year'] %}
@@ -497,7 +497,7 @@
                             {# Display the date in the format "day month year" #}
                             {{ day | int }} {{ month_name }} {{ year }}
                           {% else %}
-                            5 October 2024
+                            5 October 2025
                           {% endif %}
                         {% endif %}
                       </dd>
@@ -829,7 +829,7 @@
                           {# Display the date in the format "day month year" #}
                           {{ day | int }} {{ month_name }} {{ year }}
                         {% else %}
-                          30 September 2024
+                          30 September 2025
                         {% endif %}
                     {% else %}
                       {% if data['dr-s1-entitlement-issue-date-day'] and data['dr-s1-entitlement-issue-date-month'] and data['dr-s1-entitlement-issue-date-year'] %}
@@ -849,7 +849,7 @@
                         {# Display the date in the format "day month year" #}
                         {{ day | int }} {{ month_name }} {{ year }}
                       {% else %}
-                        30 September 2024
+                        30 September 2025
                       {% endif %}
                     {% endif %}
                   </dd>
@@ -900,10 +900,10 @@
                         {{ day | int }} {{ month_name }} {{ year }}
                 
                       {% else %}
-                        21 August 2024
+                        1 October 2025
                       {% endif %}
                     {% else %}
-                      Not provided
+                      1 October 2025
                     {% endif %}
                   </dd>
                   <dd class="nhsuk-summary-list__actions">
@@ -937,7 +937,7 @@
                       {# Display the date in the format "day month year" #}
                       {{ day | int }} {{ month_name }} {{ year }}
                     {% else %}
-                      15 October 2024
+                      5 October 2025
                   {% endif %}
                     {% else %}
                       {% if data['dr-s1-entitlement-start-date-day'] and data['dr-s1-entitlement-start-date-month'] and data['dr-s1-entitlement-start-date-year'] %}
@@ -957,7 +957,7 @@
                         {# Display the date in the format "day month year" #}
                         {{ day | int }} {{ month_name }} {{ year }}
                       {% else %}
-                        5 October 2024
+                        5 October 2025
                       {% endif %}
                     {% endif %}
                   </dd>
@@ -992,11 +992,11 @@
                           {{ day | int }} {{ month_name }} {{ year }}
                         {% else %}
                           {# Display fallback date if no update date is entered #}
-                          3 January 2025
+                          16 October 2025
                         {% endif %}
                       
                     {% else %}
-                      16 October 2024
+                      16 October 2025
                     {% endif %}
                   </dd>
                   <dd class="nhsuk-summary-list__actions">
@@ -1236,7 +1236,7 @@
                     
                   {% else %}
                     {# Default fallback date if no valid date is provided #}
-                      16 October 2024
+                      16 October 2025
                   {% endif %}
                 {% else %}
                       {% if data['dr-entitlement-end-date-day'] and data['dr-entitlement-end-date-month'] and data['dr-entitlement-end-date-year'] %}
@@ -1256,7 +1256,7 @@
                             {# Display the date in the format "day month year" #}
                             {{ day | int }} {{ month_name }} {{ year }}
                         {% else %}
-                          16 October 2024
+                          16 October 2025
                         {% endif %}
                   {% endif %}    
                   </dd>
@@ -1273,7 +1273,7 @@
                     {% if data['dr-cancellation-reason'] %}
                       {{ data['dr-cancellation-reason'] }}
                     {% else %}
-                      The entitlement holder has died
+                      The dependant’s main insured has died
                     {% endif %}
                   </dd>
 
@@ -1495,13 +1495,31 @@
                 </div>
                 {% else %}
                 <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">Date the entitlement holder died</dt>
+                  <dt class="nhsuk-summary-list__key">Date the dependant's main insured died</dt>
                   <dd class="nhsuk-summary-list__value">
-                    15 October 2024
+                    {% if data['dr-date-dependants-main-insured-died-day'] and data['dr-date-dependants-main-insured-died-month'] and data['dr-date-dependants-main-insured-died-year'] %}
+                        {% set day = data['dr-date-dependants-main-insured-died-day'] %}
+                        {% set month = data['dr-date-dependants-main-insured-died-month'] | int %}
+                        {% set year = data['dr-date-dependants-main-insured-died-year'] %}
+            
+                        {# Define month names #}
+                        {% set month_names = [
+                            "January", "February", "March", "April", "May", "June",
+                            "July", "August", "September", "October", "November", "December"
+                        ] %}
+            
+                        {# Get the month name #}
+                        {% set month_name = month_names[month - 1] %}
+            
+                        {# Display the date in the format "day month year" #}
+                        {{ day | int }} {{ month_name }} {{ year }}
+                    {% else %}
+                        16 October 2025
+                    {% endif %}
                   </dd>
 
                   <dd class="nhsuk-summary-list__actions">
-                    
+                  
                   </dd>
                 </div>
                 {% endif %}
@@ -1523,7 +1541,7 @@
 
               </dl>
 
-                <p style="text-align: right;"><a href="../cancellations/dr-cancellation-details?dr-edit-cancellation-details=Yes&dr-s1-entitlement-end-date-day=16&dr-s1-entitlement-end-date-month=10&dr-s1-entitlement-end-date-year=2024">Change cancellation details</a></p>
+                <p style="text-align: right;"><a href="../cancellations/dr-cancellation-details?dr-edit-cancellation-details=Yes&dr-s1-entitlement-end-date-day=16&dr-s1-entitlement-end-date-month=10&dr-s1-entitlement-end-date-year=2025">Change cancellation details</a></p>
 
             </div>
             <!-- Cancellation details tab content ends -->
