@@ -177,17 +177,25 @@ Enter cancellation details - Manage overseas entitlements and treatments - NHSBS
                           Select the cancellation reason
                         </legend>
 
-                        <div class="nhsuk-radios" data-module="nhsuk-radios">
 
-                          {% if data['edit-cancellation-details'] == 'Yes' %}
-                            <div class="nhsuk-radios__item">
-                              <input class="nhsuk-radios__input" id="entitlement-holder-no-longer-insured-by-ms" name="cancellation-reason" type="radio" value="The entitlement holder is no longer insured by the Member State" data-aria-controls="conditional-contact-1">
+                        {% if data['edit-cancellation-details'] == 'Yes' %}
+                        <div class="nhsuk-radios nhsuk-radios--conditional" data-module="nhsuk-radios">
+                            <div class="nhsuk-radios__item" data-module="nhsuk-radios">
+                              <input class="nhsuk-radios__input" id="entitlement-holder-no-longer-insured-by-ms" name="cancellation-reason" type="radio" value="The entitlement holder is no longer insured by the Member State" data-aria-controls="conditional-cancellation-reason-1">
                               <label class="nhsuk-label nhsuk-radios__label" for="entitlement-holder-no-longer-insured-by-ms">The entitlement holder is no longer insured by the Member State</label>
                             </div>
                             <!-- Date entry begins -->
-                            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
-                              <label class="nhsuk-label" for="date-entitlement-holder-no-longer-insured-by-ms-day-label">Enter the date the entitlement holder became no longer insured by the Member State</label>
-                              <div class="nhsuk-hint" id="s1-entitlement-issue-date-hint">For example, 3 2 2025</div>
+                            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-cancellation-reason-1">
+                              <fieldset class="nhsuk-fieldset" role="group" aria-describedby="date-entitlement-holder-no-longer-insured-by-ms-hint">
+                                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                                  <h2 class="nhsuk-fieldset__heading">
+                                    Enter the date the entitlement holder became no longer insured by the Member State
+                                  </h2>
+                                </legend>
+                                <div class="nhsuk-hint" id="date-entitlement-holder-no-longer-insured-by-ms-hint">
+                                  For example, 15 3 2025
+                                </div>
+
                                 <div class="nhsuk-date-input" id="date-entitlement-holder-no-longer-insured-by-ms">
                                   <div class="nhsuk-date-input__item">
                                     <div class="nhsuk-form-group">
@@ -208,19 +216,28 @@ Enter cancellation details - Manage overseas entitlements and treatments - NHSBS
                                     </div>
                                   </div>
                                 </div>
-                              <!-- Date entry ends -->
+                              </fieldset>
                             </div>
+                            <!-- Date entry ends -->
 
 
 
-                            <div class="nhsuk-radios__item">
-                              <input class="nhsuk-radios__input" id="entitlement-holder-no-longer-entitled-to-sickness-benefits-from-ms" name="cancellation-reason" type="radio" value="The entitlement holder is no longer entitled to sickness benefit from the Member State" data-aria-controls="conditional-contact-2">
+                            <div class="nhsuk-radios__item" data-module="nhsuk-radios">
+                              <input class="nhsuk-radios__input" id="entitlement-holder-no-longer-entitled-to-sickness-benefits-from-ms" name="cancellation-reason" type="radio" value="The entitlement holder is no longer entitled to sickness benefit from the Member State" data-aria-controls="conditional-cancellation-reason-2">
                               <label class="nhsuk-label nhsuk-radios__label" for="entitlement-holder-no-longer-entitled-to-sickness-benefits-from-ms">The entitlement holder is no longer entitled to sickness benefit from the Member State</label>
                             </div>
                             <!-- Date entry begins -->
-                            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-2">
-                              <label class="nhsuk-label" for="date-entitlement-holder-no-longer-entitled-to-sickness-benefits-by-ms-label">Enter the date the entitlement holder became no longer entitled to sickness benefit from the Member State</label>
-                              <div class="nhsuk-hint" id="s1-entitlement-issue-date-hint">For example, 3 2 2025</div>
+                            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-cancellation-reason-2">
+                              <fieldset class="nhsuk-fieldset" role="group" aria-describedby="date-date-entitlement-holder-no-longer-entitled-to-sickness-benefits-by-ms-hint">
+                                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                                  <h2 class="nhsuk-fieldset__heading">
+                                    Enter the date the entitlement holder became no longer entitled to sickness benefit from the Member State
+                                  </h2>
+                                </legend>
+                                <div class="nhsuk-hint" id="date-date-entitlement-holder-no-longer-entitled-to-sickness-benefits-by-ms-hint">
+                                  For example, 15 3 2025
+                                </div>
+
                                 <div class="nhsuk-date-input" id="date-entitlement-holder-no-longer-entitled-to-sickness-benefits-by-ms">
                                   <div class="nhsuk-date-input__item">
                                     <div class="nhsuk-form-group">
@@ -241,23 +258,32 @@ Enter cancellation details - Manage overseas entitlements and treatments - NHSBS
                                     </div>
                                   </div>
                                 </div>
-                              <!-- Date entry ends -->
+                              </fieldset>
                             </div>
+                            <!-- Date entry ends -->
 
 
 
-                            <div class="nhsuk-radios__item">
-                              <input class="nhsuk-radios__input" id="entitlement-holder-no-longer-lives-in-uk" name="cancellation-reason" type="radio" value="The entitlement holder no longer lives in the UK" data-aria-controls="conditional-contact-3">
+                            <div class="nhsuk-radios__item" data-module="nhsuk-radios">
+                              <input class="nhsuk-radios__input" id="entitlement-holder-no-longer-lives-in-uk" name="cancellation-reason" type="radio" value="The entitlement holder no longer lives in the UK" data-aria-controls="conditional-cancellation-reason-3">
                               <label class="nhsuk-label nhsuk-radios__label" for="entitlement-holder-no-longer-lives-in-uk">The entitlement holder no longer lives in the UK</label>
                             </div>
                             <!-- Date entry begins -->
-                            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-3">
-                              <label class="nhsuk-label" for="date-entitlement-holder-uk-residency-ended-label">Enter the date the entitlement holder's UK residency ended</label>
-                              <div class="nhsuk-hint" id="s1-entitlement-issue-date-hint">For example, 3 2 2025</div>
+                            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-cancellation-reason-3">
+                              <fieldset class="nhsuk-fieldset" role="group" aria-describedby="date-entitlement-holder-uk-residency-ended-hint">
+                                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                                  <h2 class="nhsuk-fieldset__heading">
+                                    Enter the date the entitlement holder's UK residency ended
+                                  </h2>
+                                </legend>
+                                <div class="nhsuk-hint" id="date-entitlement-holder-uk-residency-ended-hint">
+                                  For example, 15 3 2025
+                                </div>
+
                                 <div class="nhsuk-date-input" id="date-entitlement-holder-uk-residency-ended">
                                   <div class="nhsuk-date-input__item">
                                     <div class="nhsuk-form-group">
-                                      <label class="nhsuk-label nhsuk-date-input__label" for="date-entitlement-holder-uk-residency-endeds-day">Day</label>
+                                      <label class="nhsuk-label nhsuk-date-input__label" for="date-entitlement-holder-uk-residency-ended-day">Day</label>
                                       <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="date-entitlement-holder-uk-residency-ended-day" name="date-entitlement-holder-uk-residency-ended-day" type="number" pattern="[0-9]*" value="">
                                     </div>
                                   </div>
@@ -274,19 +300,29 @@ Enter cancellation details - Manage overseas entitlements and treatments - NHSBS
                                     </div>
                                   </div>
                                 </div>
-                              <!-- Date entry ends -->
+                              </fieldset>
                             </div>
+                            <!-- Date entry ends -->
 
 
 
-                            <div class="nhsuk-radios__item">
-                              <input class="nhsuk-radios__input" id="entitlement-holder-lives-in-another-ms" name="cancellation-reason" type="radio" value="The entitlement holder lives in another Member State" data-aria-controls="conditional-contact-4">
+                            <div class="nhsuk-radios__item" data-module="nhsuk-radios">
+                              <input class="nhsuk-radios__input" id="entitlement-holder-lives-in-another-ms" name="cancellation-reason" type="radio" value="The entitlement holder lives in another Member State" data-aria-controls="conditional-cancellation-reason-4">
                               <label class="nhsuk-label nhsuk-radios__label" for="entitlement-holder-lives-in-another-ms">The entitlement holder lives in another Member State</label>
                             </div>
                             <!-- Date entry begins -->
-                            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-4">
-                              <label class="nhsuk-label" for="date-entitlement-moved-to-another-ms-label">Enter the date the entitlement holder moved to another Member State</label>
-                              <div class="nhsuk-hint" id="s1-entitlement-issue-date-hint">For example, 3 2 2025</div>
+                            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-cancellation-reason-4">
+                              <fieldset class="nhsuk-fieldset" role="group" aria-describedby="date-entitlement-moved-to-another-ms-hint">
+                                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                                  <h2 class="nhsuk-fieldset__heading">
+                                    Enter the date the entitlement holder moved to another Member State
+                                  </h2>
+                                </legend>
+                                <div class="nhsuk-hint" id="date-entitlement-moved-to-another-ms-hint">
+                                  For example, 15 3 2025
+                                </div>
+                              
+
                                 <div class="nhsuk-date-input" id="date-entitlement-moved-to-another-ms">
                                   <div class="nhsuk-date-input__item">
                                     <div class="nhsuk-form-group">
@@ -307,24 +343,32 @@ Enter cancellation details - Manage overseas entitlements and treatments - NHSBS
                                     </div>
                                   </div>
                                 </div>
-                              <!-- Date entry ends -->
+                              </fieldset>
                             </div>
 
 
 
-                            <div class="nhsuk-radios__item">
-                              <input class="nhsuk-radios__input" id="entitlement-holder-has-died" name="cancellation-reason" type="radio" value="The entitlement holder has died" data-aria-controls="conditional-contact-5" aria-expanded="true" checked="checked">
+                            <div class="nhsuk-radios__item" data-module="nhsuk-radios">
+                              <input class="nhsuk-radios__input" id="entitlement-holder-has-died" name="cancellation-reason" type="radio" value="The entitlement holder has died" data-aria-controls="conditional-cancellation-reason-5" checked="checked">
                               <label class="nhsuk-label nhsuk-radios__label" for="entitlement-holder-has-died">The entitlement holder has died</label>
                             </div>
                             <!-- Date entry begins -->
-                            <div class="nhsuk-radios__conditional" id="conditional-contact-5">
-                              <label class="nhsuk-label" for="date-entitlement-holder-died-label">Enter the date the entitlement holder died</label>
-                              <div class="nhsuk-hint" id="s1-entitlement-issue-date-hint">For example, 3 2 2025</div>
+                            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-cancellation-reason-5">
+                              <fieldset class="nhsuk-fieldset" role="group" aria-describedby="date-entitlement-holder-died-hint">
+                                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                                  <h2 class="nhsuk-fieldset__heading">
+                                    Enter the date the entitlement holder died
+                                  </h2>
+                                </legend>
+                                <div class="nhsuk-hint" id="date-entitlement-holder-died-hint">
+                                  For example, 15 3 2025
+                                </div>
+
                                 <div class="nhsuk-date-input" id="date-entitlement-holder-died">
                                   <div class="nhsuk-date-input__item">
                                     <div class="nhsuk-form-group">
                                       <label class="nhsuk-label nhsuk-date-input__label" for="date-entitlement-holder-died-day">Day</label>
-                                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="date-entitlement-holder-died-day" name="date-entitlement-holder-died-day" type="number" pattern="[0-9]*" value="15">
+                                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="date-entitlement-holder-died-day" name="date-entitlement-holder-died-day" type="number" pattern="[0-9]*" value="16">
                                     </div>
                                   </div>
                                   <div class="nhsuk-date-input__item">
@@ -340,18 +384,19 @@ Enter cancellation details - Manage overseas entitlements and treatments - NHSBS
                                     </div>
                                   </div>
                                 </div>
-                              <!-- Date entry ends -->
+                              </fieldset>
                             </div>
 
 
 
-                            <div class="nhsuk-radios__item">
-                              <input class="nhsuk-radios__input" id="entitlement-holder-is-insured-in-other-country-with-pension" name="cancellation-reason" type="radio" value="The entitlement holder is insured in another country on the basis of pension conform Regulation (EC) 883/2004 article 24(2)(b)" data-aria-controls="conditional-contact-6">
+                            <div class="nhsuk-radios__item" data-module="nhsuk-radios">
+                              <input class="nhsuk-radios__input" id="entitlement-holder-is-insured-in-other-country-with-pension" name="cancellation-reason" type="radio" value="The entitlement holder is insured in another country on the basis of pension conform Regulation (EC) 883/2004 article 24(2)(b)" data-aria-controls="conditional-cancellation-reason-6">
                               <label class="nhsuk-label nhsuk-radios__label" for="entitlement-holder-is-insured-in-other-country-with-pension">The entitlement holder is insured in another country on the basis of pension conform Regulation (EC) 883/2004 article 24(2)(b)</label>
                             </div>
                             <!-- Country selection begins -->
-                            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-6">
-                              <label class="nhsuk-label" for="date-entitlement-holder-died-label">Select the country the entitlement holder is or will be in receipt of a state pension</label>
+                            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-cancellation-reason-6">
+                              <div class="nhsuk-form-group">
+                              <label class="nhsuk-label" for="date-entitlement-holder-died-label"><b>Select the country the entitlement holder is or will be in receipt of a state pension</b></label>
                               <div class="nhsuk-hint" id="example-hint">
                                 You can also type the country.
                               </div>
@@ -394,51 +439,59 @@ Enter cancellation details - Manage overseas entitlements and treatments - NHSBS
                                     <option value="United Kingdom(UK)">United Kingdom (UK)</option>
                                   </datalist>            
                               </div>
-                              <!-- Date entry ends -->
+                              </div>
                             </div>
 
 
 
-                            <div class="nhsuk-radios__item">
-                              <input class="nhsuk-radios__input" id="change-to-entitlement-holders-citizen-status" name="cancellation-reason" type="radio" value="The status of the entitlement holder has changed" data-aria-controls="conditional-contact-7">
+                            <div class="nhsuk-radios__item" data-module="nhsuk-radios">
+                              <input class="nhsuk-radios__input" id="change-to-entitlement-holders-citizen-status" name="cancellation-reason" type="radio" value="The status of the entitlement holder has changed" data-aria-controls="conditional-cancellation-reason-7" aria-expanded="false">
                               <label class="nhsuk-label nhsuk-radios__label" for="change-to-entitlement-holders-citizen-status">The status of the entitlement holder has changed</label>
                             </div>
 
 
 
-                            <div class="nhsuk-radios__item">
-                              <input class="nhsuk-radios__input" id="institution-issuing-entitlement-changed" name="cancellation-reason" type="radio" value="The institution issuing the entitlement has changed" data-aria-controls="conditional-contact-8">
+                            <div class="nhsuk-radios__item" data-module="nhsuk-radios">
+                              <input class="nhsuk-radios__input" id="institution-issuing-entitlement-changed" name="cancellation-reason" type="radio" value="The institution issuing the entitlement has changed" data-aria-controls="conditional-cancellation-reason-8" aria-expanded="false">
                               <label class="nhsuk-label nhsuk-radios__label" for="institution-issuing-entitlement-changed">The institution issuing the entitlement has changed</label>
                             </div>
 
 
-                            <div class="nhsuk-radios__item">
-                              <input class="nhsuk-radios__input" id="other" name="cancellation-reason" type="radio" value="Other" data-aria-controls="conditional-contact-9">
+
+                            <div class="nhsuk-radios__item" data-module="nhsuk-radios">
+                              <input class="nhsuk-radios__input" id="other" name="cancellation-reason" type="radio" value="Other" data-aria-controls="conditional-cancellation-reason-11">
                               <label class="nhsuk-label nhsuk-radios__label" for="other">Other</label>
                             </div>
                             <!-- Other cancellation reason entry begins -->
-                            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-9">
-                              <label class="nhsuk-label" for="date-entitlement-holder-died-label">Enter the cancellation reason</label>
-                                <div class="nhsuk-form-group">
-                                    <textarea class="nhsuk-textarea" id="otherCancellationReasonComments" name="other-cancellation-reason-comments" rows="4" maxlength="255"></textarea>
-                                    <p id="charactersRemaining" class="nhsuk-hint" style="margin-top: -20px;" aria-hidden="true">255 characters remaining</p>
-                                    <p id="char-count-screen-reader" class="nhsuk-u-visually-hidden" aria-live="polite">You can enter up to 255 characters</p>
-                                  </div>         
-                              </div>
-                              <!-- Other cancellation reason entry ends -->
+                            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-cancellation-reason-11">
+                              <div class="nhsuk-form-group">
+                                <label class="nhsuk-label" for="date-entitlement-holder-died-label">Enter the cancellation reason</label>
+                                
+                                <textarea class="nhsuk-textarea" id="drOtherCancellationReasonComments" name="other-cancellation-reason-comments" rows="4" maxlength="255"></textarea>
+                                <p id="charactersRemaining" class="nhsuk-hint" style="margin-top: -20px;" aria-hidden="true">255 characters remaining</p>
+                                <p id="char-count-screen-reader" class="nhsuk-u-visually-hidden" aria-live="polite">You can enter up to 255 characters</p>
+                              </div>         
                             </div>
+                            <!-- Other cancellation reason entry ends -->
 
-                            <!-- If cancellation details don't exist yet-->
                             {% else %}
-                            <div class="nhsuk-radios" data-module="nhsuk-radios">
-                              <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="entitlement-holder-no-longer-insured-by-ms" name="cancellation-reason" type="radio" value="The entitlement holder is no longer insured by the Member State" data-aria-controls="conditional-contact-1">
+                            <div class="nhsuk-radios nhsuk-radios--conditional" data-module="nhsuk-radios">
+                              <div class="nhsuk-radios__item" data-module="nhsuk-radios">
+                                <input class="nhsuk-radios__input" id="entitlement-holder-no-longer-insured-by-ms" name="cancellation-reason" type="radio" value="The entitlement holder is no longer insured by the Member State" data-aria-controls="conditional-cancellation-reason-1">
                                 <label class="nhsuk-label nhsuk-radios__label" for="entitlement-holder-no-longer-insured-by-ms">The entitlement holder is no longer insured by the Member State</label>
                               </div>
                               <!-- Date entry begins -->
-                              <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
-                                <label class="nhsuk-label" for="date-entitlement-holder-no-longer-insured-by-ms-day-label">Enter the date the entitlement holder became no longer insured by the Member State</label>
-                                <div class="nhsuk-hint" id="s1-entitlement-issue-date-hint">For example, 3 2 2025</div>
+                              <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-cancellation-reason-1">
+                                <fieldset class="nhsuk-fieldset" role="group" aria-describedby="date-entitlement-holder-no-longer-insured-by-ms-hint">
+                                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                                    <h2 class="nhsuk-fieldset__heading">
+                                      Enter the date the entitlement holder became no longer insured by the Member State
+                                    </h2>
+                                  </legend>
+                                  <div class="nhsuk-hint" id="date-entitlement-holder-no-longer-insured-by-ms-hint">
+                                    For example, 15 3 2025
+                                  </div>
+  
                                   <div class="nhsuk-date-input" id="date-entitlement-holder-no-longer-insured-by-ms">
                                     <div class="nhsuk-date-input__item">
                                       <div class="nhsuk-form-group">
@@ -459,19 +512,28 @@ Enter cancellation details - Manage overseas entitlements and treatments - NHSBS
                                       </div>
                                     </div>
                                   </div>
-                                <!-- Date entry ends -->
+                                </fieldset>
                               </div>
-
-
-
-                              <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="entitlement-holder-no-longer-entitled-to-sickness-benefits-from-ms" name="cancellation-reason" type="radio" value="The entitlement holder is no longer entitled to sickness benefit from the Member State" data-aria-controls="conditional-contact-2">
+                              <!-- Date entry ends -->
+  
+  
+  
+                              <div class="nhsuk-radios__item" data-module="nhsuk-radios">
+                                <input class="nhsuk-radios__input" id="entitlement-holder-no-longer-entitled-to-sickness-benefits-from-ms" name="cancellation-reason" type="radio" value="The entitlement holder is no longer entitled to sickness benefit from the Member State" data-aria-controls="conditional-cancellation-reason-2">
                                 <label class="nhsuk-label nhsuk-radios__label" for="entitlement-holder-no-longer-entitled-to-sickness-benefits-from-ms">The entitlement holder is no longer entitled to sickness benefit from the Member State</label>
                               </div>
                               <!-- Date entry begins -->
-                              <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-2">
-                                <label class="nhsuk-label" for="date-entitlement-holder-no-longer-entitled-to-sickness-benefits-by-ms-label">Enter the date the entitlement holder became no longer entitled to sickness benefit from the Member State</label>
-                                <div class="nhsuk-hint" id="s1-entitlement-issue-date-hint">For example, 3 2 2025</div>
+                              <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-cancellation-reason-2">
+                                <fieldset class="nhsuk-fieldset" role="group" aria-describedby="date-date-entitlement-holder-no-longer-entitled-to-sickness-benefits-by-ms-hint">
+                                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                                    <h2 class="nhsuk-fieldset__heading">
+                                      Enter the date the entitlement holder became no longer entitled to sickness benefit from the Member State
+                                    </h2>
+                                  </legend>
+                                  <div class="nhsuk-hint" id="date-date-entitlement-holder-no-longer-entitled-to-sickness-benefits-by-ms-hint">
+                                    For example, 15 3 2025
+                                  </div>
+  
                                   <div class="nhsuk-date-input" id="date-entitlement-holder-no-longer-entitled-to-sickness-benefits-by-ms">
                                     <div class="nhsuk-date-input__item">
                                       <div class="nhsuk-form-group">
@@ -492,23 +554,32 @@ Enter cancellation details - Manage overseas entitlements and treatments - NHSBS
                                       </div>
                                     </div>
                                   </div>
-                                <!-- Date entry ends -->
+                                </fieldset>
                               </div>
-
-
-
-                              <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="entitlement-holder-no-longer-lives-in-uk" name="cancellation-reason" type="radio" value="The entitlement holder no longer lives in the UK" data-aria-controls="conditional-contact-3">
+                              <!-- Date entry ends -->
+  
+  
+  
+                              <div class="nhsuk-radios__item" data-module="nhsuk-radios">
+                                <input class="nhsuk-radios__input" id="entitlement-holder-no-longer-lives-in-uk" name="cancellation-reason" type="radio" value="The entitlement holder no longer lives in the UK" data-aria-controls="conditional-cancellation-reason-3">
                                 <label class="nhsuk-label nhsuk-radios__label" for="entitlement-holder-no-longer-lives-in-uk">The entitlement holder no longer lives in the UK</label>
                               </div>
                               <!-- Date entry begins -->
-                              <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-3">
-                                <label class="nhsuk-label" for="date-entitlement-holder-uk-residency-ended-label">Enter the date the entitlement holder's UK residency ended</label>
-                                <div class="nhsuk-hint" id="s1-entitlement-issue-date-hint">For example, 3 2 2025</div>
+                              <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-cancellation-reason-3">
+                                <fieldset class="nhsuk-fieldset" role="group" aria-describedby="date-entitlement-holder-uk-residency-ended-hint">
+                                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                                    <h2 class="nhsuk-fieldset__heading">
+                                      Enter the date the entitlement holder's UK residency ended
+                                    </h2>
+                                  </legend>
+                                  <div class="nhsuk-hint" id="date-entitlement-holder-uk-residency-ended-hint">
+                                    For example, 15 3 2025
+                                  </div>
+  
                                   <div class="nhsuk-date-input" id="date-entitlement-holder-uk-residency-ended">
                                     <div class="nhsuk-date-input__item">
                                       <div class="nhsuk-form-group">
-                                        <label class="nhsuk-label nhsuk-date-input__label" for="date-entitlement-holder-uk-residency-endeds-day">Day</label>
+                                        <label class="nhsuk-label nhsuk-date-input__label" for="date-entitlement-holder-uk-residency-ended-day">Day</label>
                                         <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="date-entitlement-holder-uk-residency-ended-day" name="date-entitlement-holder-uk-residency-ended-day" type="number" pattern="[0-9]*" value="">
                                       </div>
                                     </div>
@@ -525,19 +596,29 @@ Enter cancellation details - Manage overseas entitlements and treatments - NHSBS
                                       </div>
                                     </div>
                                   </div>
-                                <!-- Date entry ends -->
+                                </fieldset>
                               </div>
-
-
-
-                              <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="entitlement-holder-lives-in-another-ms" name="cancellation-reason" type="radio" value="The entitlement holder lives in another Member State" data-aria-controls="conditional-contact-4">
+                              <!-- Date entry ends -->
+  
+  
+  
+                              <div class="nhsuk-radios__item" data-module="nhsuk-radios">
+                                <input class="nhsuk-radios__input" id="entitlement-holder-lives-in-another-ms" name="cancellation-reason" type="radio" value="The entitlement holder lives in another Member State" data-aria-controls="conditional-cancellation-reason-4">
                                 <label class="nhsuk-label nhsuk-radios__label" for="entitlement-holder-lives-in-another-ms">The entitlement holder lives in another Member State</label>
                               </div>
                               <!-- Date entry begins -->
-                              <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-4">
-                                <label class="nhsuk-label" for="date-entitlement-moved-to-another-ms-label">Enter the date the entitlement holder moved to another Member State</label>
-                                <div class="nhsuk-hint" id="s1-entitlement-issue-date-hint">For example, 3 2 2025</div>
+                              <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-cancellation-reason-4">
+                                <fieldset class="nhsuk-fieldset" role="group" aria-describedby="date-entitlement-moved-to-another-ms-hint">
+                                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                                    <h2 class="nhsuk-fieldset__heading">
+                                      Enter the date the entitlement holder moved to another Member State
+                                    </h2>
+                                  </legend>
+                                  <div class="nhsuk-hint" id="date-entitlement-moved-to-another-ms-hint">
+                                    For example, 15 3 2025
+                                  </div>
+                                
+  
                                   <div class="nhsuk-date-input" id="date-entitlement-moved-to-another-ms">
                                     <div class="nhsuk-date-input__item">
                                       <div class="nhsuk-form-group">
@@ -558,19 +639,27 @@ Enter cancellation details - Manage overseas entitlements and treatments - NHSBS
                                       </div>
                                     </div>
                                   </div>
-                                <!-- Date entry ends -->
+                                </fieldset>
                               </div>
-
-
-
-                              <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="entitlement-holder-has-died" name="cancellation-reason" type="radio" value="The entitlement holder has died" data-aria-controls="conditional-contact-5">
+  
+  
+  
+                              <div class="nhsuk-radios__item" data-module="nhsuk-radios">
+                                <input class="nhsuk-radios__input" id="entitlement-holder-has-died" name="cancellation-reason" type="radio" value="The entitlement holder has died" data-aria-controls="conditional-cancellation-reason-5">
                                 <label class="nhsuk-label nhsuk-radios__label" for="entitlement-holder-has-died">The entitlement holder has died</label>
                               </div>
                               <!-- Date entry begins -->
-                              <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-5">
-                                <label class="nhsuk-label" for="date-entitlement-holder-died-label">Enter the date the entitlement holder died</label>
-                                <div class="nhsuk-hint" id="s1-entitlement-issue-date-hint">For example, 3 2 2025</div>
+                              <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-cancellation-reason-5">
+                                <fieldset class="nhsuk-fieldset" role="group" aria-describedby="date-entitlement-holder-died-hint">
+                                  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
+                                    <h2 class="nhsuk-fieldset__heading">
+                                      Enter the date the entitlement holder died
+                                    </h2>
+                                  </legend>
+                                  <div class="nhsuk-hint" id="date-entitlement-holder-died-hint">
+                                    For example, 15 3 2025
+                                  </div>
+  
                                   <div class="nhsuk-date-input" id="date-entitlement-holder-died">
                                     <div class="nhsuk-date-input__item">
                                       <div class="nhsuk-form-group">
@@ -591,18 +680,19 @@ Enter cancellation details - Manage overseas entitlements and treatments - NHSBS
                                       </div>
                                     </div>
                                   </div>
-                                <!-- Date entry ends -->
+                                </fieldset>
                               </div>
-
-
-
-                              <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="entitlement-holder-is-insured-in-other-country-with-pension" name="cancellation-reason" type="radio" value="The entitlement holder is insured in another country on the basis of pension conform Regulation (EC) 883/2004 article 24(2)(b)" data-aria-controls="conditional-contact-6">
+  
+  
+  
+                              <div class="nhsuk-radios__item" data-module="nhsuk-radios">
+                                <input class="nhsuk-radios__input" id="entitlement-holder-is-insured-in-other-country-with-pension" name="cancellation-reason" type="radio" value="The entitlement holder is insured in another country on the basis of pension conform Regulation (EC) 883/2004 article 24(2)(b)" data-aria-controls="conditional-cancellation-reason-6">
                                 <label class="nhsuk-label nhsuk-radios__label" for="entitlement-holder-is-insured-in-other-country-with-pension">The entitlement holder is insured in another country on the basis of pension conform Regulation (EC) 883/2004 article 24(2)(b)</label>
                               </div>
                               <!-- Country selection begins -->
-                              <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-6">
-                                <label class="nhsuk-label" for="date-entitlement-holder-died-label">Select the country the entitlement holder is or will be in receipt of a state pension</label>
+                              <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-cancellation-reason-6">
+                                <div class="nhsuk-form-group">
+                                <label class="nhsuk-label" for="date-entitlement-holder-died-label"><b>Select the country the entitlement holder is or will be in receipt of a state pension</b></label>
                                 <div class="nhsuk-hint" id="example-hint">
                                   You can also type the country.
                                 </div>
@@ -645,43 +735,41 @@ Enter cancellation details - Manage overseas entitlements and treatments - NHSBS
                                       <option value="United Kingdom(UK)">United Kingdom (UK)</option>
                                     </datalist>            
                                 </div>
-                                <!-- Date entry ends -->
+                                </div>
                               </div>
-
-
-
-                              <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="change-to-entitlement-holders-citizen-status" name="cancellation-reason" type="radio" value="The status of the entitlement holder has changed" data-aria-controls="conditional-contact-7">
+  
+  
+  
+                              <div class="nhsuk-radios__item" data-module="nhsuk-radios">
+                                <input class="nhsuk-radios__input" id="change-to-entitlement-holders-citizen-status" name="cancellation-reason" type="radio" value="The status of the entitlement holder has changed" data-aria-controls="conditional-cancellation-reason-7" aria-expanded="false">
                                 <label class="nhsuk-label nhsuk-radios__label" for="change-to-entitlement-holders-citizen-status">The status of the entitlement holder has changed</label>
                               </div>
-
-
-
-                              <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="institution-issuing-entitlement-changed" name="cancellation-reason" type="radio" value="The institution issuing the entitlement has changed" data-aria-controls="conditional-contact-8">
+  
+  
+  
+                              <div class="nhsuk-radios__item" data-module="nhsuk-radios">
+                                <input class="nhsuk-radios__input" id="institution-issuing-entitlement-changed" name="cancellation-reason" type="radio" value="The institution issuing the entitlement has changed" data-aria-controls="conditional-cancellation-reason-8" aria-expanded="false">
                                 <label class="nhsuk-label nhsuk-radios__label" for="institution-issuing-entitlement-changed">The institution issuing the entitlement has changed</label>
                               </div>
-
-
-                              <div class="nhsuk-radios__item">
-                                <input class="nhsuk-radios__input" id="other" name="cancellation-reason" type="radio" value="Other" data-aria-controls="conditional-contact-9">
+  
+  
+  
+                              <div class="nhsuk-radios__item" data-module="nhsuk-radios">
+                                <input class="nhsuk-radios__input" id="other" name="cancellation-reason" type="radio" value="Other" data-aria-controls="conditional-cancellation-reason-11">
                                 <label class="nhsuk-label nhsuk-radios__label" for="other">Other</label>
                               </div>
                               <!-- Other cancellation reason entry begins -->
-                              <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-9">
-                                <label class="nhsuk-label" for="date-entitlement-holder-died-label">Enter the cancellation reason</label>
-                                  <div class="nhsuk-form-group">
-                                      <textarea class="nhsuk-textarea" id="otherCancellationReasonComments" name="other-cancellation-reason-comments" rows="4" maxlength="255"></textarea>
-                                      <p id="charactersRemaining" class="nhsuk-hint" aria-hidden="true">255 characters remaining</p>
-                                      <p id="char-count-screen-reader" class="nhsuk-u-visually-hidden" aria-live="polite">You can enter up to 255 characters</p>
-                                    </div>         
-                                </div>
-                                <!-- Other cancellation reason entry ends -->
-                            </div>
+                              <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-cancellation-reason-11">
+                                <div class="nhsuk-form-group">
+                                  <label class="nhsuk-label" for="date-entitlement-holder-died-label">Enter the cancellation reason</label>
+                                  
+                                  <textarea class="nhsuk-textarea" id="drOtherCancellationReasonComments" name="other-cancellation-reason-comments" rows="4" maxlength="255"></textarea>
+                                  <p id="charactersRemaining" class="nhsuk-hint" style="margin-top: -20px;" aria-hidden="true">255 characters remaining</p>
+                                  <p id="char-count-screen-reader" class="nhsuk-u-visually-hidden" aria-live="polite">You can enter up to 255 characters</p>
+                                </div>         
+                              </div>
+                              <!-- Other cancellation reason entry ends -->
                             {% endif %}
-                    </fieldset>
-                  </div>
-                  <!-- End of 'Select the cancellation reason' conditional radios -->
 
                   <button class="nhsuk-button nhsuk-u-margin-top-3" style="margin-bottom: 60px;" data-module="nhsuk-button" type="submit">Continue</button>
 

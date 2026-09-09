@@ -1273,7 +1273,7 @@
                     {% if data['dr-cancellation-reason'] %}
                       {{ data['dr-cancellation-reason'] }}
                     {% else %}
-                      The dependant’s main insured has died
+                      The entitlement holder has died
                     {% endif %}
                   </dd>
 
@@ -1303,7 +1303,7 @@
                         {# Display the date in the format "day month year" #}
                         {{ day | int }} {{ month_name }} {{ year }}
                     {% else %}
-                        14 January 2025
+                      16 October 2025
                     {% endif %}
                   </dd>
 
@@ -1333,7 +1333,7 @@
                         {# Display the date in the format "day month year" #}
                         {{ day | int }} {{ month_name }} {{ year }}
                     {% else %}
-                        14 January 2025
+                      16 October 2025
                     {% endif %}
                   </dd>
 
@@ -1363,7 +1363,7 @@
                         {# Display the date in the format "day month year" #}
                         {{ day | int }} {{ month_name }} {{ year }}
                     {% else %}
-                        14 January 2025
+                      16 October 2025
                     {% endif %}
                   </dd>
 
@@ -1393,7 +1393,7 @@
                         {# Display the date in the format "day month year" #}
                         {{ day | int }} {{ month_name }} {{ year }}
                     {% else %}
-                        14 January 2025
+                      16 October 2025
                     {% endif %}
                   </dd>
 
@@ -1423,7 +1423,7 @@
                         {# Display the date in the format "day month year" #}
                         {{ day | int }} {{ month_name }} {{ year }}
                     {% else %}
-                        12 January 2025
+                      16 October 2025
                     {% endif %}
                   </dd>
 
@@ -1453,7 +1453,7 @@
                         {# Display the date in the format "day month year" #}
                         {{ day | int }} {{ month_name }} {{ year }}
                     {% else %}
-                        12 January 2025
+                        16 October 2025
                     {% endif %}
                   </dd>
 
@@ -1495,12 +1495,12 @@
                 </div>
                 {% else %}
                 <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">Date the dependant's main insured died</dt>
+                  <dt class="nhsuk-summary-list__key">Date the entitlement holder died</dt>
                   <dd class="nhsuk-summary-list__value">
-                    {% if data['dr-date-dependants-main-insured-died-day'] and data['dr-date-dependants-main-insured-died-month'] and data['dr-date-dependants-main-insured-died-year'] %}
-                        {% set day = data['dr-date-dependants-main-insured-died-day'] %}
-                        {% set month = data['dr-date-dependants-main-insured-died-month'] | int %}
-                        {% set year = data['dr-date-dependants-main-insured-died-year'] %}
+                    {% if data['dr-date-entitlement-holder-died-day'] and data['dr-date-entitlement-holder-died-month'] and data['dr-date-entitlement-holder-died-year'] %}
+                        {% set day = data['dr-date-entitlement-holder-died-day'] %}
+                        {% set month = data['dr-date-entitlement-holder-died-month'] | int %}
+                        {% set year = data['dr-date-entitlement-holder-died-year'] %}
             
                         {# Define month names #}
                         {% set month_names = [
@@ -1519,25 +1519,22 @@
                   </dd>
 
                   <dd class="nhsuk-summary-list__actions">
-                  
+                    
                   </dd>
                 </div>
                 {% endif %}
 
-                {% if data['dr-cancellation-additional-comments'] and data['dr-cancellation-additional-comments'] %}
+                
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">Additional comments (optional)</dt>
                   <dd class="nhsuk-summary-list__value">
-                    {% if data['dr-cancellation-additional-comments'] and data['dr-cancellation-additional-comments'] %}
-                      {{ data['dr-cancellation-additional-comments'] }}
-                    {% endif %}
+                    The dependant's main insured died on 16/10/2025
                   </dd>
 
                   <dd class="nhsuk-summary-list__actions">
                     
                   </dd>
                 </div>
-                {% endif %}
 
               </dl>
 
